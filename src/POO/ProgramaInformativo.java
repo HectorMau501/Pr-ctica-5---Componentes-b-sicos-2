@@ -3,28 +3,19 @@ package POO;
 
 public class ProgramaInformativo 
 {
-    private String nombre;
     private String estelar;
     private String canal;
-    private int horario;
+    private String horario;
+    private String comentarios;
 
-    public ProgramaInformativo()
-    {
-        this.nombre = "";
+    public ProgramaInformativo() {
+        
         this.estelar = "";
         this.canal = "";
-        this.horario = 0;
+        this.horario = "";
+        this.comentarios = "";
     }
 
-    public String getNombre() 
-    {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) 
-    {
-        this.nombre = nombre;
-    }
 
     public String getEstelar() 
     {
@@ -46,15 +37,23 @@ public class ProgramaInformativo
         this.canal = canal;
     }
 
-    public int getHorario() 
-    {
+    public String getHorario() {
         return horario;
     }
 
-    public void setHorario(int horario) 
-    {
+    public void setHorario(String horario) {
         this.horario = horario;
     }
+
+    public String getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
+    
+    
     
     
       

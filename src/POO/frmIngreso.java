@@ -6,13 +6,14 @@ package POO;
  * @author HECTOR MAURICIO
  */
 public class frmIngreso extends javax.swing.JFrame {
-        
+     
+    //Arreglo de uruarios 
     Usuario[] usuario = new Usuario[5];
 
     public frmIngreso() 
     {
         initComponents();
-        
+        //Inicializar arreglo
         usuario[0] = new Usuario("Hector","12345678");
         usuario[1] = new Usuario("Carlos","12345678");
         usuario[2] = new Usuario("Luis","12345678");
@@ -36,10 +37,10 @@ public class frmIngreso extends javax.swing.JFrame {
         jbnAceptar = new javax.swing.JButton();
         jbnSalir = new javax.swing.JButton();
         jtfUsuario = new javax.swing.JTextField();
-        jtfContraseña = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jlbMensaje = new javax.swing.JLabel();
+        jpfContraseña = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,12 +72,6 @@ public class frmIngreso extends javax.swing.JFrame {
             }
         });
 
-        jtfContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                jtfContraseñaKeyTyped(evt);
-            }
-        });
-
         jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Programa Informativo");
@@ -85,6 +80,12 @@ public class frmIngreso extends javax.swing.JFrame {
         jLabel2.setText("Usuario:");
 
         jlbMensaje.setText("mensaje");
+
+        jpfContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jpfContraseñaKeyTyped(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -99,14 +100,12 @@ public class frmIngreso extends javax.swing.JFrame {
                         .addGroup(layout.createSequentialGroup()
                             .addGap(150, 150, 150)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jtfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(jLabel2)
+                                .addComponent(jLabel3))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jtfUsuario, javax.swing.GroupLayout.DEFAULT_SIZE, 239, Short.MAX_VALUE)
+                                .addComponent(jpfContraseña))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(244, 244, 244)
                         .addComponent(jbnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -127,11 +126,11 @@ public class frmIngreso extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jtfUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                .addGap(41, 41, 41)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jtfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37)
+                    .addComponent(jpfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(38, 38, 38)
                 .addComponent(jlbMensaje)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -146,7 +145,8 @@ public class frmIngreso extends javax.swing.JFrame {
     private void jbnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnAceptarActionPerformed
         //Obtener los textos de caja de texto y caja de contraseña
         String usr = jtfUsuario.getText();
-        String con = jtfContraseña.getText();
+        String con = jpfContraseña.getText();
+        jlbMensaje.setText(jpfContraseña.getPassword().toString());
         
         
         //Bandera para determinar si es usuario valido
@@ -157,18 +157,18 @@ public class frmIngreso extends javax.swing.JFrame {
             {
                        
                 //Se pasa como parametros: Usuario y ventana actual
-                frmRegistro abrir = new frmRegistro();
+                frmRegistro abrir = new frmRegistro(usr, this);
                 abrir.setVisible(true); //Muestra la ventana de Formula
                 this.setVisible(false);  //Hace invisible la ventana
                 
                 valido = true;
             }
-            else if(valido)
-            {
-               jlbMensaje.setVisible(true);
-               jlbMensaje.setText("Usuario Invalido");
-            } 
         }
+            if(!valido)
+            {
+               jlbMensaje.setText("Cuenta sin acceso");
+               
+            } 
            
        
         
@@ -206,8 +206,7 @@ public class frmIngreso extends javax.swing.JFrame {
         
     }//GEN-LAST:event_jtfUsuarioKeyTyped
 
-    private void jtfContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jtfContraseñaKeyTyped
-        
+    private void jpfContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jpfContraseñaKeyTyped
         char tam = 8;
 
         char caracter = evt.getKeyChar();
@@ -218,14 +217,22 @@ public class frmIngreso extends javax.swing.JFrame {
             evt.consume();
         }
 
-        if(jtfContraseña.getText().length()>=tam)
+        if(jtfUsuario.getText().length()>=tam)
         {
             getToolkit().beep();
             evt.consume();
         }
-        
-    }//GEN-LAST:event_jtfContraseñaKeyTyped
 
+    }//GEN-LAST:event_jpfContraseñaKeyTyped
+
+    private void limpiarComponentes()
+    {
+        jtfUsuario.setText("");
+        jpfContraseña.setText("");
+        jtfUsuario.requestFocus();
+    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -269,7 +276,7 @@ public class frmIngreso extends javax.swing.JFrame {
     private javax.swing.JButton jbnAceptar;
     private javax.swing.JButton jbnSalir;
     private javax.swing.JLabel jlbMensaje;
-    private javax.swing.JTextField jtfContraseña;
+    private javax.swing.JPasswordField jpfContraseña;
     private javax.swing.JTextField jtfUsuario;
     // End of variables declaration//GEN-END:variables
 }

@@ -11,11 +11,31 @@ package POO;
  */
 public class frmMostrar extends javax.swing.JFrame {
 
-    /**
-     * Creates new form frmMostrar
-     */
-    public frmMostrar() {
+   //Intsnacia para asociar con ventana de Registro
+    private frmRegistro registro;
+    
+    //Instancia de la clase cientifico
+    Cientifico cientifico;
+    
+    
+    /*Modificar al constructor para recibir como un parametro objeto clase Cientifico
+    y la ventana de formulario*/
+    public frmMostrar(Cientifico cie, frmRegistro regis ) {
         initComponents();
+        //Asociar las instancias con los parametros
+        
+        cientifico = cie;
+        registro = regis;
+        
+        //Mostramos la informacion del objeto en la caja de texto multimedia 
+        
+        jtaDatos.append("\tEstelar: "+cientifico.getEstelar()+"\n\n");
+        jtaDatos.append("\tEl horario es de: "+cientifico.getHorario()+"\n\n");
+        jtaDatos.append("\tComentarios: "+cientifico.getComentarios()+"\n\n");
+        jtaDatos.append("\tTipo: "+cientifico.getTipo()+"\n\n");
+        jtaDatos.append("\tInteres: "+cientifico.getInteres()+"\n\n");
+        
+        
     }
 
     /**
@@ -28,35 +48,13 @@ public class frmMostrar extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jtfNombre = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        jtfEstelar = new javax.swing.JTextField();
-        jtfCanal = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jtfHorario = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jtfTipo = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
-        jtfInteres = new javax.swing.JTextField();
         jbnRegresar = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jtaDatos = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setText("Ingrese la Informacion");
-
-        jLabel2.setText("Nombre ");
-
-        jLabel3.setText("Estelar");
-
-        jLabel4.setText("Canal");
-
-        jLabel5.setText("Horario");
-
-        jLabel6.setText("Tipo");
-
-        jLabel7.setText("Interes");
 
         jbnRegresar.setText("Regresar");
         jbnRegresar.addActionListener(new java.awt.event.ActionListener() {
@@ -65,74 +63,36 @@ public class frmMostrar extends javax.swing.JFrame {
             }
         });
 
+        jtaDatos.setColumns(20);
+        jtaDatos.setRows(5);
+        jScrollPane1.setViewportView(jtaDatos);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(67, 67, 67)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addGap(35, 35, 35))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addGap(43, 43, 43))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtfEstelar)
-                            .addComponent(jtfTipo)
-                            .addComponent(jtfInteres, javax.swing.GroupLayout.DEFAULT_SIZE, 358, Short.MAX_VALUE)
-                            .addComponent(jtfNombre)
-                            .addComponent(jtfCanal)
-                            .addComponent(jtfHorario)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(368, 368, 368)
-                        .addComponent(jbnRegresar)))
-                .addContainerGap(259, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(290, 290, 290))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(368, 368, 368)
+                        .addComponent(jbnRegresar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(86, 86, 86)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 643, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(42, 42, 42)
                 .addComponent(jLabel1)
-                .addGap(67, 67, 67)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jtfNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jtfEstelar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jtfCanal, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5)
-                    .addComponent(jtfHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jtfTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(jtfInteres, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 55, Short.MAX_VALUE)
+                .addGap(22, 22, 22)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 286, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jbnRegresar)
                 .addGap(42, 42, 42))
         );
@@ -141,8 +101,8 @@ public class frmMostrar extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnRegresarActionPerformed
-        frmRegistro regresar = new frmRegistro();
-        regresar.setVisible(true);
+        
+        registro.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jbnRegresarActionPerformed
 
@@ -176,26 +136,17 @@ public class frmMostrar extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmMostrar().setVisible(true);
+                //new frmMostrar().setVisible(true);
+                
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbnRegresar;
-    private javax.swing.JTextField jtfCanal;
-    private javax.swing.JTextField jtfEstelar;
-    private javax.swing.JTextField jtfHorario;
-    private javax.swing.JTextField jtfInteres;
-    private javax.swing.JTextField jtfNombre;
-    private javax.swing.JTextField jtfTipo;
+    private javax.swing.JTextArea jtaDatos;
     // End of variables declaration//GEN-END:variables
 
 
