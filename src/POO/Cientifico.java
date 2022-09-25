@@ -7,15 +7,11 @@ public class Cientifico extends ProgramaInformativo
     private String interes;
     
 
-    public Cientifico() {
-
+    public Cientifico() 
+    {
         this.tipo = "";
         this.interes = "";
-
     }
-
-
-    
 
     public String getTipo() 
     {
@@ -36,7 +32,4 @@ public class Cientifico extends ProgramaInformativo
     {
         this.interes = interes;
     }
-
-    
-  
 }

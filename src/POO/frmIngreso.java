@@ -1,6 +1,8 @@
 
 package POO;
 
+import com.sun.glass.events.KeyEvent;
+
 /**
  *
  * @author HECTOR MAURICIO
@@ -14,14 +16,11 @@ public class frmIngreso extends javax.swing.JFrame {
     {
         initComponents();
         //Inicializar arreglo
-        usuario[0] = new Usuario("Hector","12345678");
-        usuario[1] = new Usuario("Carlos","12345678");
-        usuario[2] = new Usuario("Luis","12345678");
-        usuario[3] = new Usuario("Alex","12345678");
-        usuario[4] = new Usuario("Christofer","12345678");   
-        
-        
-            
+        usuario[0] = new Usuario("Hector","12345");
+        usuario[1] = new Usuario("Carlos","12345");
+        usuario[2] = new Usuario("Luis","12345");
+        usuario[3] = new Usuario("Alex","12345");
+        usuario[4] = new Usuario("Christofer","12345");        
     }
 
     /**
@@ -79,6 +78,7 @@ public class frmIngreso extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setText("Usuario:");
 
+        jlbMensaje.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jlbMensaje.setText("mensaje");
 
         jpfContraseña.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -132,7 +132,7 @@ public class frmIngreso extends javax.swing.JFrame {
                     .addComponent(jpfContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(38, 38, 38)
                 .addComponent(jlbMensaje)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbnAceptar)
                     .addComponent(jbnSalir))
@@ -146,7 +146,7 @@ public class frmIngreso extends javax.swing.JFrame {
         //Obtener los textos de caja de texto y caja de contraseña
         String usr = jtfUsuario.getText();
         String con = jpfContraseña.getText();
-        jlbMensaje.setText(jpfContraseña.getPassword().toString());
+        jlbMensaje.setText(jpfContraseña.getPassword().toString()); //para el mensaje si esta mal la contraseña
         
         
         //Bandera para determinar si es usuario valido
@@ -169,9 +169,7 @@ public class frmIngreso extends javax.swing.JFrame {
                jlbMensaje.setText("Cuenta sin acceso");
                
             } 
-           
-       
-        
+  
     }//GEN-LAST:event_jbnAceptarActionPerformed
 
     private void jbnSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnSalirActionPerformed
@@ -199,15 +197,12 @@ public class frmIngreso extends javax.swing.JFrame {
             getToolkit().beep();
             evt.consume();
         }
-        /*if(caracter == KeyEvent.VK_ENTER)
-        {
-            jtfContraseña.requestFocus();
-        }*/
+        
         
     }//GEN-LAST:event_jtfUsuarioKeyTyped
 
     private void jpfContraseñaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jpfContraseñaKeyTyped
-        char tam = 8;
+        /*char tam = 5;
 
         char caracter = evt.getKeyChar();
 
@@ -221,7 +216,7 @@ public class frmIngreso extends javax.swing.JFrame {
         {
             getToolkit().beep();
             evt.consume();
-        }
+        }*/
 
     }//GEN-LAST:event_jpfContraseñaKeyTyped
 

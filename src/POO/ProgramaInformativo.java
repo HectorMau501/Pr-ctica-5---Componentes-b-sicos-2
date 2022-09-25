@@ -8,14 +8,14 @@ public class ProgramaInformativo
     private String horario;
     private String comentarios;
 
-    public ProgramaInformativo() {
+    public ProgramaInformativo() 
+    {
         
         this.estelar = "";
         this.canal = "";
         this.horario = "";
         this.comentarios = "";
     }
-
 
     public String getEstelar() 
     {
@@ -37,24 +37,24 @@ public class ProgramaInformativo
         this.canal = canal;
     }
 
-    public String getHorario() {
+    public String getHorario()
+    {
         return horario;
     }
 
-    public void setHorario(String horario) {
+    public void setHorario(String horario)
+    {
         this.horario = horario;
     }
 
-    public String getComentarios() {
+    public String getComentarios() 
+    {
         return comentarios;
     }
 
-    public void setComentarios(String comentarios) {
+    public void setComentarios(String comentarios) 
+    {
         this.comentarios = comentarios;
-    }
-    
-    
-    
-    
+    }  
       
 }

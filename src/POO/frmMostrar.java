@@ -22,20 +22,21 @@ public class frmMostrar extends javax.swing.JFrame {
     y la ventana de formulario*/
     public frmMostrar(Cientifico cie, frmRegistro regis ) {
         initComponents();
-        //Asociar las instancias con los parametros
-        
+        //Asociar las instancias con los parametros 
         cientifico = cie;
         registro = regis;
         
-        //Mostramos la informacion del objeto en la caja de texto multimedia 
+       
         
+        
+        //Mostramos la informacion del objeto en la caja de texto multimedia        
         jtaDatos.append("\tEstelar: "+cientifico.getEstelar()+"\n\n");
         jtaDatos.append("\tEl horario es de: "+cientifico.getHorario()+"\n\n");
         jtaDatos.append("\tComentarios: "+cientifico.getComentarios()+"\n\n");
         jtaDatos.append("\tTipo: "+cientifico.getTipo()+"\n\n");
+        jtaDatos.append("\tCanal: "+cientifico.getCanal()+"\n\n");
         jtaDatos.append("\tInteres: "+cientifico.getInteres()+"\n\n");
-        
-        
+              
     }
 
     /**
@@ -102,8 +103,8 @@ public class frmMostrar extends javax.swing.JFrame {
 
     private void jbnRegresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnRegresarActionPerformed
         
-        registro.setVisible(true);
-        this.dispose();
+        registro.setVisible(true); //Hace visible la ventana de registro
+        this.dispose(); //Elimina esta ventana
     }//GEN-LAST:event_jbnRegresarActionPerformed
 
     /**

@@ -32,8 +32,6 @@ public class Usuario
     {
         this.contraseña = contraseña;
     }
-    
-    
-    
+   
     
 }

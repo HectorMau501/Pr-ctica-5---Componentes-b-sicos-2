@@ -52,12 +52,12 @@ public class frmRegistro extends javax.swing.JFrame {
         jcbReportaje = new javax.swing.JCheckBox();
         jcbDocumental = new javax.swing.JCheckBox();
         jrbGeographic = new javax.swing.JRadioButton();
-        jrbNoticias = new javax.swing.JRadioButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
+        jrbDiscovery = new javax.swing.JRadioButton();
+        jrbRT = new javax.swing.JRadioButton();
         jbnRegistrar = new javax.swing.JButton();
         jLabel8 = new javax.swing.JLabel();
         jcbArticulo = new javax.swing.JCheckBox();
-        jRadioButton2 = new javax.swing.JRadioButton();
+        jrbCosmos = new javax.swing.JRadioButton();
         jcbNacional = new javax.swing.JCheckBox();
         jcbInternacional = new javax.swing.JCheckBox();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -82,18 +82,26 @@ public class frmRegistro extends javax.swing.JFrame {
             }
         });
 
+        jLabel4.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel4.setText("Canal");
 
+        jLabel5.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel5.setText("Horario");
 
+        jLabel6.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel6.setText("Tipo");
 
+        jLabel1.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 255));
         jLabel1.setText("Ingrese la Informacion");
 
+        jLabel2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel2.setText("Nombre ");
 
+        jLabel7.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel7.setText("Interes");
 
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel3.setText("Estelar");
 
         jbnMostrar.setText("Mostrar");
@@ -116,9 +124,9 @@ public class frmRegistro extends javax.swing.JFrame {
 
         jrbGeographic.setText("National Geographic");
 
-        jrbNoticias.setText("Noticias");
+        jrbDiscovery.setText("Discovery Channel");
 
-        jRadioButton1.setText("jRadioButton1");
+        jrbRT.setText("RT");
 
         jbnRegistrar.setText("Registrar");
         jbnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -127,11 +135,12 @@ public class frmRegistro extends javax.swing.JFrame {
             }
         });
 
+        jLabel8.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         jLabel8.setText("Comentarios");
 
         jcbArticulo.setText("Articulos");
 
-        jRadioButton2.setText("jRadioButton2");
+        jrbCosmos.setText("Cosmos");
 
         jcbNacional.setText("Nacional");
 
@@ -152,10 +161,17 @@ public class frmRegistro extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(65, 65, 65)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel7)
+                        .addGap(159, 159, 159)
+                        .addComponent(jcbPrivado)
+                        .addGap(156, 156, 156)
+                        .addComponent(jcbPublico)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel6)
@@ -186,11 +202,12 @@ public class frmRegistro extends javax.swing.JFrame {
                                             .addGap(37, 37, 37)
                                             .addComponent(jrbGeographic)
                                             .addGap(26, 26, 26)
-                                            .addComponent(jrbNoticias)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 43, Short.MAX_VALUE)
+                                            .addComponent(jrbDiscovery)
+                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addComponent(jbnRegistrar)
-                                                .addComponent(jRadioButton1))))
+                                                .addComponent(jbnRegistrar, javax.swing.GroupLayout.Alignment.TRAILING)
+                                                .addComponent(jrbRT, javax.swing.GroupLayout.Alignment.TRAILING))
+                                            .addGap(28, 28, 28)))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
@@ -203,26 +220,23 @@ public class frmRegistro extends javax.swing.JFrame {
                                                 .addComponent(jcbReportaje)))
                                         .addGap(53, 53, 53)
                                         .addComponent(jcbDocumental)))
-                                .addGap(15, 15, 15)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jcbArticulo)
-                                    .addComponent(jRadioButton2)))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(jcbArticulo))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jrbCosmos))))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(159, 159, 159)
-                                .addComponent(jcbPrivado)
-                                .addGap(156, 156, 156)
-                                .addComponent(jcbPublico))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addGap(37, 37, 37)
                                 .addComponent(jbnRegresar)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jbnLimpiar)
-                                .addGap(10, 10, 10))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(80, 80, 80)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(91, Short.MAX_VALUE))
+                                .addComponent(jbnLimpiar)))
+                        .addContainerGap(37, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(80, 80, 80)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 566, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(120, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -266,9 +280,9 @@ public class frmRegistro extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jrbGeographic)
-                    .addComponent(jrbNoticias)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2))
+                    .addComponent(jrbDiscovery)
+                    .addComponent(jrbRT)
+                    .addComponent(jrbCosmos))
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
@@ -276,7 +290,7 @@ public class frmRegistro extends javax.swing.JFrame {
                     .addComponent(jcbPrivado))
                 .addGap(29, 29, 29)
                 .addComponent(jlbRegistrado)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jbnRegistrar)
                     .addComponent(jbnMostrar))
@@ -316,14 +330,23 @@ public class frmRegistro extends javax.swing.JFrame {
 
     private void jbnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnRegistrarActionPerformed
         //Evaluar la seleccion de un jRadioButton
-        /*if(jrbPrivado.isSelected())
+        if(jrbGeographic.isSelected())
         {
-            cientifico.setTipo(1);
+            cientifico.setCanal("National Geographic");
         }
-        else if(jrbPublico.isSelected())
+        else if(jrbDiscovery.isSelected())
         {
-            cientifico.setTipo(2);
-        }*/
+            cientifico.setCanal("National Geographic");
+        }
+        else if(jrbRT.isSelected())
+        {
+             cientifico.setCanal("RT");
+        }
+        else if(jrbCosmos.isSelected())
+        {
+             cientifico.setCanal("RT");
+        }
+        else jlbRegistrado.setText("No ha seleccionado ningun canal");
         
         //Evaluar la seleccion de un jCheckBox
         if(jcbNacional.isSelected())
@@ -334,6 +357,11 @@ public class frmRegistro extends javax.swing.JFrame {
         {
             cientifico.setEstelar("Internacional");
         }
+        if(!jcbNacional.isSelected() && !jcbInternacional.isSelected())
+        {
+            jlbRegistrado.setText("Ningu Estelar seleccionado");
+        }
+        
         //Tipo
         if(jcbCientifico.isSelected())
         {
@@ -351,6 +379,12 @@ public class frmRegistro extends javax.swing.JFrame {
         {
             cientifico.setTipo("Articulos");
         }
+        if(!jcbCientifico.isSelected() && jcbReportaje.isSelected() && 
+                jcbDocumental.isSelected() && jcbArticulo.isSelected())
+        {
+             jlbRegistrado.setText(jlbRegistrado.getText()+"Ningun tipo seleccionado");
+        }
+        
         if(jcbPublico.isSelected())
         {
             cientifico.setInteres("Publico");
@@ -359,20 +393,31 @@ public class frmRegistro extends javax.swing.JFrame {
         {
             cientifico.setInteres("Privado");         
         }
+        if(jcbPublico.isSelected() && jcbPrivado.isSelected())
+        {
+             jlbRegistrado.setText(jlbRegistrado.getText()+"Ningun interes seleccionado");
+        }
         
         //Para las cajas multimedias
         cientifico.setComentarios(jtaComentarios.getText());
+
+        //Para los textos
+        cientifico.setHorario(jtfHorario.getText());
+        
         //Mensaje informativo para el usuario
         jlbRegistrado.setText("Usuario registrado");
         
-        
-        //para los textos
-        cientifico.setHorario(jtfHorario.getText());
-        
         limpiar();
+        
+          mensajeDeAlerta("Usuario Registrado" , "Registro" );
         
     }//GEN-LAST:event_jbnRegistrarActionPerformed
 
+     public static void mensajeDeAlerta(String mensaje, String titulo)
+    {
+        javax.swing.JOptionPane.showMessageDialog(null, mensaje, titulo, javax.swing.JOptionPane.INFORMATION_MESSAGE);
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -417,8 +462,6 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jbnLimpiar;
     private javax.swing.JButton jbnMostrar;
@@ -433,8 +476,10 @@ public class frmRegistro extends javax.swing.JFrame {
     private javax.swing.JCheckBox jcbPublico;
     private javax.swing.JCheckBox jcbReportaje;
     private javax.swing.JLabel jlbRegistrado;
+    private javax.swing.JRadioButton jrbCosmos;
+    private javax.swing.JRadioButton jrbDiscovery;
     private javax.swing.JRadioButton jrbGeographic;
-    private javax.swing.JRadioButton jrbNoticias;
+    private javax.swing.JRadioButton jrbRT;
     private javax.swing.JTextArea jtaComentarios;
     private javax.swing.JTextField jtfHorario;
     private javax.swing.JTextField jtfNombre;
@@ -446,6 +491,11 @@ public class frmRegistro extends javax.swing.JFrame {
         jtfHorario.setText("");
         //Limpiar botones de opcion 
         
+        //Limpiar campos de opcion 
+        jrbCosmos.setSelected(false);
+        jrbDiscovery.setSelected(false);
+        jrbGeographic.setSelected(false);
+        jrbRT.setSelected(false);
         
         //Limpiar casillas de verificacion 
         jcbInternacional.setSelected(false);
