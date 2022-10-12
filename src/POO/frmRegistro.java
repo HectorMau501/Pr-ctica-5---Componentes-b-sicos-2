@@ -17,6 +17,12 @@ public class frmRegistro extends javax.swing.JFrame {
     //Intsancia de la clase cientifico 
     private Cientifico cientifico;
     
+    String canales;
+    String canal1;
+    String canal2;
+    String canal3;
+    String canal4;
+    
     
     
     public frmRegistro(String usr, frmIngreso ing) {
@@ -112,6 +118,11 @@ public class frmRegistro extends javax.swing.JFrame {
         });
 
         jcbCientifico.setText("Cientificos");
+        jcbCientifico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbCientificoActionPerformed(evt);
+            }
+        });
 
         jcbReportaje.setText("Reportajes");
         jcbReportaje.addActionListener(new java.awt.event.ActionListener() {
@@ -121,12 +132,32 @@ public class frmRegistro extends javax.swing.JFrame {
         });
 
         jcbDocumental.setText("Documentales");
+        jcbDocumental.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbDocumentalActionPerformed(evt);
+            }
+        });
 
         jrbGeographic.setText("National Geographic");
+        jrbGeographic.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbGeographicActionPerformed(evt);
+            }
+        });
 
         jrbDiscovery.setText("Discovery Channel");
+        jrbDiscovery.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbDiscoveryActionPerformed(evt);
+            }
+        });
 
         jrbRT.setText("RT");
+        jrbRT.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbRTActionPerformed(evt);
+            }
+        });
 
         jbnRegistrar.setText("Registrar");
         jbnRegistrar.addActionListener(new java.awt.event.ActionListener() {
@@ -139,12 +170,32 @@ public class frmRegistro extends javax.swing.JFrame {
         jLabel8.setText("Comentarios");
 
         jcbArticulo.setText("Articulos");
+        jcbArticulo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbArticuloActionPerformed(evt);
+            }
+        });
 
         jrbCosmos.setText("Cosmos");
+        jrbCosmos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jrbCosmosActionPerformed(evt);
+            }
+        });
 
         jcbNacional.setText("Nacional");
+        jcbNacional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbNacionalActionPerformed(evt);
+            }
+        });
 
         jcbInternacional.setText("Internacional");
+        jcbInternacional.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbInternacionalActionPerformed(evt);
+            }
+        });
 
         jtaComentarios.setColumns(20);
         jtaComentarios.setRows(5);
@@ -153,8 +204,18 @@ public class frmRegistro extends javax.swing.JFrame {
         jlbRegistrado.setText("Contenido Registrado");
 
         jcbPrivado.setText("Privado");
+        jcbPrivado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbPrivadoActionPerformed(evt);
+            }
+        });
 
         jcbPublico.setText("Publico");
+        jcbPublico.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jcbPublicoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -326,10 +387,17 @@ public class frmRegistro extends javax.swing.JFrame {
 
     private void jcbReportajeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbReportajeActionPerformed
         // TODO add your handling code here:
+              if(jcbReportaje.isSelected())
+        {
+            jcbDocumental.setSelected(false);
+            jcbCientifico.setSelected(false);
+            jcbArticulo.setSelected(false);
+        }
     }//GEN-LAST:event_jcbReportajeActionPerformed
 
     private void jbnRegistrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbnRegistrarActionPerformed
         //Evaluar la seleccion de un jRadioButton
+       /*
         if(jrbGeographic.isSelected())
         {
             cientifico.setCanal("National Geographic");
@@ -346,7 +414,13 @@ public class frmRegistro extends javax.swing.JFrame {
         {
              cientifico.setCanal("RT");
         }
-        else jlbRegistrado.setText("No ha seleccionado ningun canal");
+        else jlbRegistrado.setText("No ha seleccionado ningun canal");*/
+        
+        if(!jrbGeographic.isSelected()&& jrbDiscovery.isSelected() && jrbRT.isSelected()
+                && jrbCosmos.isSelected())
+        {
+            jlbRegistrado.setText("No se ha seleccionado algun canal");
+        }
         
         //Evaluar la seleccion de un jCheckBox
         if(jcbNacional.isSelected())
@@ -359,7 +433,7 @@ public class frmRegistro extends javax.swing.JFrame {
         }
         if(!jcbNacional.isSelected() && !jcbInternacional.isSelected())
         {
-            jlbRegistrado.setText("Ningu Estelar seleccionado");
+            jlbRegistrado.setText("Ningun Estelar seleccionado");
         }
         
         //Tipo
@@ -407,11 +481,114 @@ public class frmRegistro extends javax.swing.JFrame {
         //Mensaje informativo para el usuario
         jlbRegistrado.setText("Usuario registrado");
         
+        canales = (canal1+canal2+canal3+canal4);
+        cientifico.setCanal(canales);
         limpiar();
         
           mensajeDeAlerta("Usuario Registrado" , "Registro" );
         
     }//GEN-LAST:event_jbnRegistrarActionPerformed
+
+    private void jrbGeographicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbGeographicActionPerformed
+        // TODO add your handling code here:
+        //Esto es para que se puedan seleccionar varios jrb y los imprima en la ventana de mostrar
+        if(jrbGeographic.isSelected())
+        {
+            canal1 = "\n\tNational Geographic";
+        }
+    }//GEN-LAST:event_jrbGeographicActionPerformed
+
+    private void jrbDiscoveryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbDiscoveryActionPerformed
+        // TODO add your handling code here:
+        //Esto es para que se puedan seleccionar varios jrb y los imprima en la ventana de mostrar
+        if(jrbDiscovery.isSelected())
+        {
+            canal2 = "\n\tDiscovery Channel";
+        }
+    }//GEN-LAST:event_jrbDiscoveryActionPerformed
+
+    private void jrbRTActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbRTActionPerformed
+        //Esto es para que se puedan seleccionar varios jrb y los imprima en la ventana de mostrar
+        if(jrbRT.isSelected())
+        {
+            canal3 = "\n\t RT";
+        }
+    }//GEN-LAST:event_jrbRTActionPerformed
+
+    private void jrbCosmosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jrbCosmosActionPerformed
+        // TODO add your handling code here:
+        if(jrbCosmos.isSelected())
+        {
+            canal4 = "\n\t Cosmos";
+        }
+    }//GEN-LAST:event_jrbCosmosActionPerformed
+
+    private void jcbInternacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbInternacionalActionPerformed
+        // TODO add your handling code here:
+        //Esto es para que solo seleccione una opcion y no pueda las demas
+        if(jcbInternacional.isSelected())
+        {
+            jcbNacional.setSelected(false);
+        }
+    }//GEN-LAST:event_jcbInternacionalActionPerformed
+
+    private void jcbNacionalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbNacionalActionPerformed
+        // TODO add your handling code here:
+        //Esto es para que solo seleccione una opcion y no pueda las demas
+           if(jcbNacional.isSelected())
+        {
+            jcbInternacional.setSelected(false);
+        }
+    }//GEN-LAST:event_jcbNacionalActionPerformed
+
+    private void jcbPrivadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbPrivadoActionPerformed
+        // TODO add your handling code here:
+        if(jcbPrivado.isSelected())
+        {
+            jcbPublico.setSelected(false);
+        }
+        
+    }//GEN-LAST:event_jcbPrivadoActionPerformed
+
+    private void jcbPublicoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbPublicoActionPerformed
+        if(jcbPublico.isSelected())
+        {
+            jcbPrivado.setSelected(false);
+        }
+    }//GEN-LAST:event_jcbPublicoActionPerformed
+
+    private void jcbCientificoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbCientificoActionPerformed
+        // TODO add your handling code here:
+        //Esto es para que solo seleccione una opcion y no pueda las demas
+        if(jcbCientifico.isSelected())
+        {
+            jcbDocumental.setSelected(false);
+            jcbReportaje.setSelected(false);
+            jcbArticulo.setSelected(false);
+        }
+    }//GEN-LAST:event_jcbCientificoActionPerformed
+
+    private void jcbDocumentalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbDocumentalActionPerformed
+        // TODO add your handling code here:
+        //Esto es para que solo seleccione una opcion y no pueda las demas
+        if(jcbDocumental.isSelected())
+        {
+            jcbCientifico.setSelected(false);
+            jcbReportaje.setSelected(false);
+            jcbArticulo.setSelected(false);
+        }
+    }//GEN-LAST:event_jcbDocumentalActionPerformed
+
+    private void jcbArticuloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jcbArticuloActionPerformed
+        // TODO add your handling code here:
+        //Esto es para que solo seleccione una opcion y no pueda las demas
+        if(jcbArticulo.isSelected())
+        {
+            jcbDocumental.setSelected(false);
+            jcbReportaje.setSelected(false);
+            jcbCientifico.setSelected(false);
+        }
+    }//GEN-LAST:event_jcbArticuloActionPerformed
 
      public static void mensajeDeAlerta(String mensaje, String titulo)
     {

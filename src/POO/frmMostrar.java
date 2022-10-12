@@ -25,10 +25,7 @@ public class frmMostrar extends javax.swing.JFrame {
         //Asociar las instancias con los parametros 
         cientifico = cie;
         registro = regis;
-        
-       
-        
-        
+              
         //Mostramos la informacion del objeto en la caja de texto multimedia        
         jtaDatos.append("\tEstelar: "+cientifico.getEstelar()+"\n\n");
         jtaDatos.append("\tEl horario es de: "+cientifico.getHorario()+"\n\n");

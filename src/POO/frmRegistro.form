@@ -298,6 +298,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Cientificos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbCientificoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jcbReportaje">
       <Properties>
@@ -311,21 +314,33 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Documentales"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbDocumentalActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jrbGeographic">
       <Properties>
         <Property name="text" type="java.lang.String" value="National Geographic"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jrbGeographicActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jrbDiscovery">
       <Properties>
         <Property name="text" type="java.lang.String" value="Discovery Channel"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jrbDiscoveryActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jrbRT">
       <Properties>
         <Property name="text" type="java.lang.String" value="RT"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jrbRTActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jbnRegistrar">
       <Properties>
@@ -347,21 +362,33 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Articulos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbArticuloActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jrbCosmos">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cosmos"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jrbCosmosActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jcbNacional">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nacional"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbNacionalActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jcbInternacional">
       <Properties>
         <Property name="text" type="java.lang.String" value="Internacional"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbInternacionalActionPerformed"/>
+      </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="jScrollPane1">
       <AuxValues>
@@ -387,11 +414,17 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Privado"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbPrivadoActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jcbPublico">
       <Properties>
         <Property name="text" type="java.lang.String" value="Publico"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jcbPublicoActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
